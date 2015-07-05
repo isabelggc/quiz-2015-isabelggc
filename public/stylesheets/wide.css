@@ -20,6 +20,7 @@ section {
 	float: right;
 	width: 80%;
 	height: 200px;
+	overflow: scroll;
 }
 
 footer {

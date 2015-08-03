@@ -2,7 +2,10 @@
 <a href="/quizzes/new"><button type="button">Crear pregunta</button></a>
 <table>
   <% var i; for (i=0; i < quizzes.length; i++) {%>
-    <tr><td><a href='quizzes/<%= quizzes[i].id %>'><%= quizzes[i].pregunta %></a></td></tr>
+    <tr>
+      <td><a href='quizzes/<%= quizzes[i].id %>'><%= quizzes[i].pregunta %></a></td>
+      <td><a href='quizzes/<%= quizzes[i].id %>/edit'><button>Editar</button></a></td>
+    </tr>
 <% } %>
 </table>
 <form method='get' action='/quizzes'>

@@ -40,6 +40,19 @@ app.use(function(req, res, next){
   next();
 });
 
+app.use(function(req, res, next) {
+  var ahora = (new Date()).getTime();
+  if (req.session.user) {
+    if (req.session.user.expiration > ahora) { // Aun no ha expirado
+      req.session.user.expiration = ahora + 120000;
+    } else { // Ya ha expirado
+      req.session.destroy();
+      res.redirect('/login');
+    }
+  }
+  next();
+});
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler

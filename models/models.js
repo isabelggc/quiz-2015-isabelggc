@@ -35,14 +35,17 @@ sequelize.sync().then(function(){
   // success(..) ejecuta el manejador una vez creada la tabla
   Quiz.count().then(function (count){
     if (count === 0) { // la tabla se inicializa sólo si está vacía
-      Quiz.create({ pregunta: 'Verdadero o falso: Italia es una republica',
-                    respuesta: 'Verdadero'
+      Quiz.create({ pregunta: 'Que significan las siglas WWW',
+                    respuesta: 'World Wide Web',
+                    tema: 'tecnologia'
                   });
       Quiz.create({ pregunta: 'Capital de Italia',
-                    respuesta: 'Roma'
+                    respuesta: 'Roma',
+                    tema: 'humanidades'
                   });
       Quiz.create({ pregunta: 'Capital de Portugal',
-                    respuesta: 'Lisboa'
+                    respuesta: 'Lisboa',
+                    tema: 'humanidades'
                   }).then(function(){console.log('Base de datos inicializada')});
     }
   });

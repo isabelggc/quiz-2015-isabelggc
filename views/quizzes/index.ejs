@@ -1,3 +1,5 @@
+<p>
+<a href="/quizzes/new"><button type="button">Crear pregunta</button></a>
 <table>
   <% var i; for (i=0; i < quizzes.length; i++) {%>
     <tr><td><a href='quizzes/<%= quizzes[i].id %>'><%= quizzes[i].pregunta %></a></td></tr>
@@ -8,3 +10,4 @@
   <p><input type='text' name='search'/></p>
   <p><input type='submit' value='Enviar'/></p>
 </form>
+
